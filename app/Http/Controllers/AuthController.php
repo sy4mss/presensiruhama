@@ -14,7 +14,7 @@ class AuthController extends Controller
             return redirect('/dashboard');
         }
         else{
-            echo "ERROR";
+            return redirect('/');
         }
     }
 }
