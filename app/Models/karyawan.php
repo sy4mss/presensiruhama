@@ -10,11 +10,13 @@ use Illuminate\Notifications\Notifiable;
 class Karyawan extends Authenticatable
 {
     use HasFactory, Notifiable;
-
-    protected $table = "karyawan";
-    protected $primaryKey = "email";
+    
+    protected $table = 'karyawan'; // Nama tabel di database
+    protected $primaryKey = 'email'; // Primary key
+    protected $keyType = 'string';  // Tipe primary key
+    public $incrementing = false;  // Non-auto increment
     protected $fillable = [
-        'nik',
+        'email',
         'nama_lengkap',
         'jabatan',
         'no_hp',

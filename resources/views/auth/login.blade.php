@@ -26,7 +26,7 @@
 
 
     <!-- App Capsule -->
-    <div id="appCapsule" class="pt-0">
+        <div id="appCapsule" class="pt-0">
         <div class="login-form mt-1">
             <div class="section">
                 <img src="{{ asset('assets/img/login.png') }}" alt="image" class="form-image">
@@ -36,6 +36,13 @@
                 <h4>Fill the form to log in</h4>
             </div>
             <div class="section mt-1 mb-5">
+                @php
+                    $massagewarning = Session::get('warning');
+                @endphp
+                @if (session::get('warning'))
+                <div class="alert alert-outline-warning">
+                    {{ $massagewarning }}
+                @endif
                 <form action="/proseslogin" method="POST">
                     @csrf
                     <div class="form-group boxed">
